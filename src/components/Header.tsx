@@ -5,7 +5,7 @@ import { ShoppingCart, UserRound } from "lucide-react";
 
 export default function Header() {
   return (
-    <header className="flex justify-between items-center h-20 mx-20">
+    <header className="flex justify-between items-center h-20 ">
       <Image src={"/Logo.png"} alt={"Company Logo"} width={140} height={32} />
       <Input placeholder="Search" className="w-[540px] bg-[#EBEBEB]" />
       <div>
