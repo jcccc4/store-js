@@ -32,26 +32,49 @@ export default function ImageSlider() {
       return index - 1;
     });
   }
+
+  function showSelectedImage(index: number) {
+    setCurrentSlide(index);
+  }
+
   return (
-    <div className="w-full h-400">
-      <div className="relative  ">
-        <div className="absolute top-0 left-0 w-full h-full bg-black/20"></div>
-        <div >
-          <Image
-            className="w-full h-[400px] object-cover"
-            src={images[currentSlide].url}
-            alt={images[currentSlide].alt}
-            width={1280}
-            height={400}
-          />
-        </div>
-        <div className="absolute top-0 left-0 flex justify-between items-center w-full h-full">
+    <div className="w-full h-[400px]">
+      <div className="relative  w-full h-full z-0">
+        {images.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute top-0 left-0 w-full h-full transition-opacity duration-200 ${
+              index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <Image
+              className="w-full h-[400px] object-cover"
+              src={image.url}
+              alt={image.alt}
+              width={1280}
+              height={400}
+            />
+          </div>
+        ))}
+        <div className="absolute top-0 left-0 flex justify-between items-center w-full h-full z-10">
           <Button onClick={showPreviousImage}>
-            <ArrowBigLeft color="white" size={64} />
+            <ArrowBigLeft color="white" size={48} strokeWidth={1}/>
           </Button>
           <Button onClick={showNextImage}>
-            <ArrowBigRight color="white" size={64} />
+            <ArrowBigRight color="white" size={48} strokeWidth={1}/>
           </Button>
+        </div>
+        <div className="absolute bottom-0 left-0 flex justify-center items-end w-full  z-10 py-4">
+          <div className="inline-flex bg-slate-700/40 gap-2 p-2 rounded-full">
+            {images.map((_, index) => (
+              <div
+                className={`h-2  border rounded-full bg-white ${
+                  index === currentSlide ? "w-12 transition-all" : "w-4 hover:w-8 transition-all"
+                }`}
+                onClick={() => showSelectedImage(index)}
+              ></div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
