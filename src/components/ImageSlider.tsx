@@ -38,8 +38,8 @@ export default function ImageSlider() {
   }
 
   return (
-    <div className="w-full h-[400px]">
-      <div className="relative  w-full h-full z-0">
+    <div className=" h-[312px] rounded-xl mb-4">
+      <div className="relative w-full h-full z-0">
         {images.map((image, index) => (
           <div
             key={index}
@@ -48,7 +48,7 @@ export default function ImageSlider() {
             }`}
           >
             <Image
-              className="w-full h-[400px] object-cover"
+              className="w-full h-full object-cover rounded-xl"
               src={image.url}
               alt={image.alt}
               width={1280}

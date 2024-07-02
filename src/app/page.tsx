@@ -1,8 +1,8 @@
-import Header from "@/app/__components/Header";
-import ImageSlider from "@/components/ImageSlider";
-import Category from "./__components/Category";
+import Header from "@/app/_components/Header";
+import Category from "@/app/_components/Category";
 import img1 from "../../public/img1.jpg";
 import { StaticImageData } from "next/image";
+import Deals from "@/app/_components/Deals";
 
 export type Products={
   id: number;
@@ -67,10 +67,10 @@ const productsSample:Products[] = [
 
 export default function Home() {
   return (
-    <main className="w-[1380px] m-auto">
+    <main className="">
       <Header />
-      <ImageSlider />
-      <Category products={productsSample}/>
+      <Deals />
+      {/* <Category products={productsSample}/> */}
     </main>
   );
 }
