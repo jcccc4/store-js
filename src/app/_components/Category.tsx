@@ -11,27 +11,35 @@ export default function Category({ products }: { products: Products[] }) {
   const [count, setCount] = useState(0);
   const slideRef = useRef<HTMLDivElement>(null);
   function showNextImage() {
-    if (count >= 0 && count < 2) {
+    if (count < 8) {
       if (slideRef.current) {
         setCount(count + 1);
-        slideRef.current.style.translate = `${(count+1) * (-158.5 - 16)}px 0`;
+        slideRef.current.style.translate = `${
+          (-(slideRef.current?.clientWidth + 16) / 2) * (count + 1)
+        }px`;
       }
     }
   }
   function showPrevImage() {
+    console.log(slideRef.current?.clientWidth);
+
     if (count > 0) {
       if (slideRef.current) {
+        console.log(count);
         setCount(count - 1);
-        slideRef.current.style.translate = `${(count - 1) * (-158.5 - 16)}px 0`;
+        slideRef.current.style.translate = `${
+          (-(slideRef.current?.clientWidth + 16) / 2) * (count - 1)
+        }px`;
       }
     }
   }
   return (
-    <div>
-      <section className="w-full relative inline-block h-[200px] m-auto no-scrollbar  overflow-x-scroll  ">
+    <div className="relative mx-6 py-4  flex flex-col gap-4">
+      <h1>Categories</h1>
+      <section className="w-full overflow-hidden">
         <div
           ref={slideRef}
-          className="flex absolute gap-4 left-0 transition-translate ease-in-out delay-100z-0"
+          className="flex scroll-smooth gap-4 transition-translate ease-in-out delay-100 z-0"
         >
           <CategoryCard name={"Monitor"} url={img1} alt={""} />
           <CategoryCard name={"Monitor"} url={img1} alt={""} />

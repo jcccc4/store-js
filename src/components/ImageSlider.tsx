@@ -38,7 +38,7 @@ export default function ImageSlider() {
   }
 
   return (
-    <div className=" h-[312px] rounded-xl mb-4">
+    <div className=" h-[312px] rounded-xl mb-4 border border-[#363636]">
       <div className="relative w-full h-full z-0">
         {images.map((image, index) => (
           <div

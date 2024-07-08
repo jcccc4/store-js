@@ -70,7 +70,7 @@ export default function Home() {
     <main className="">
       <Header />
       <Deals />
-      {/* <Category products={productsSample}/> */}
+      <Category products={productsSample}/>
     </main>
   );
 }

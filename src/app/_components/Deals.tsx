@@ -7,9 +7,9 @@ import laptop from "../../../public/laptop.jpg";
 
 export default function Deals() {
   return (
-    <section className="flex flex-col w-auto mx-6">
+    <section className="flex flex-col w-auto mx-6 my-4">
       <ImageSlider />
-      <section className="flex flex-wrap gap-4">
+      <section className="flex flex-wrap gap-4 justify-between ">
         <SideDeals
           src={desktop}
           alt={"Image of a Desktop"}
@@ -40,7 +40,7 @@ function SideDeals({
   description: string;
 }) {
   return (
-    <aside className="relative w-[329px] bg-red-700 rounded-xl">
+    <aside className="relative w-[329px] rounded-xl border border-[#363636]">
       <figure>
         <Image
           src={src}
