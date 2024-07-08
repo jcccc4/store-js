@@ -21,8 +21,6 @@ export default function Category({ products }: { products: Products[] }) {
     }
   }
   function showPrevImage() {
-    console.log(slideRef.current?.clientWidth);
-
     if (count > 0) {
       if (slideRef.current) {
         console.log(count);

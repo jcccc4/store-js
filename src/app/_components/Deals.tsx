@@ -3,7 +3,7 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import React from "react";
 import desktop from "../../../public/desktop.jpg";
-import laptop from "../../../public/laptop.jpg";
+
 
 export default function Deals() {
   return (
@@ -40,14 +40,14 @@ function SideDeals({
   description: string;
 }) {
   return (
-    <aside className="relative w-[329px] rounded-xl border border-[#363636]">
+    <aside className="relative w-full rounded-xl border border-[#363636]">
       <figure>
         <Image
           src={src}
           alt={alt}
           height={1440}
           width={3270}
-          className="rounded-xl max-h-[144px] object-cover"
+          className="rounded-xl object-cover"
         />
         <span className="absolute left-0 top-0 w-full h-full bg-black/40 rounded-xl" />
       </figure>
