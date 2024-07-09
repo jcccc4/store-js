@@ -6,6 +6,7 @@ import img1 from "../../../public/img1.jpg";
 import { Button } from "@/components/ui/button";
 import { ArrowBigLeft, ArrowBigRight } from "lucide-react";
 import { Products } from "../page";
+import { Card } from "@/components/ui/card";
 
 export default function Category({ products }: { products: Products[] }) {
   const [count, setCount] = useState(0);
@@ -23,7 +24,7 @@ export default function Category({ products }: { products: Products[] }) {
   function showPrevImage() {
     if (count > 0) {
       if (slideRef.current) {
-        console.log(count);
+
         setCount(count - 1);
         slideRef.current.style.translate = `${
           (-(slideRef.current?.clientWidth + 16) / 2) * (count - 1)
@@ -39,7 +40,7 @@ export default function Category({ products }: { products: Products[] }) {
           ref={slideRef}
           className="flex scroll-smooth gap-4 transition-translate ease-in-out delay-100 z-0"
         >
-          <CategoryCard name={"Monitor"} url={img1} alt={""} />
+          <CategoryCard  url={img1} alt={""} />
           <CategoryCard name={"Monitor"} url={img1} alt={""} />
           <CategoryCard name={"Monitor"} url={img1} alt={""} />
           <CategoryCard name={"Monitor"} url={img1} alt={""} />
