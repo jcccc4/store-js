@@ -83,20 +83,18 @@ export default function Deals() {
           <CarouselContent>
             {images.map((image, index) => (
               <CarouselItem key={index}>
-                <div>
-                  <Card>
-                    <CardContent className="aspect-video p-0 rounded-xl ">
-                      <Image
-                        key={index}
-                        src={image.url}
-                        alt={image.alt}
-                        height={1440}
-                        width={3270}
-                        className="rounded-xl aspect-video object-cover"
-                      />
-                    </CardContent>
-                  </Card>
-                </div>
+                <Card>
+                  <CardContent className=" aspect-video p-0 rounded-xl ">
+                    <Image
+                      key={index}
+                      src={image.url}
+                      alt={image.alt}
+                      height={1440}
+                      width={3270}
+                      className="rounded-xl aspect-video object-cover"
+                    />
+                  </CardContent>
+                </Card>
               </CarouselItem>
             ))}
           </CarouselContent>
@@ -147,14 +145,14 @@ function SideDeals({
   description: string;
 }) {
   return (
-    <aside className="relative w-full rounded-xl border border-[#363636]">
+    <aside className="relative w-full aspect-video rounded-xl border border-[#363636]">
       <figure>
         <Image
           src={src}
           alt={alt}
           height={1440}
           width={3270}
-          className="rounded-xl object-cover"
+          className="rounded-xl aspect-video object-cover"
         />
         <span className="absolute left-0 top-0 w-full h-full bg-black/40 rounded-xl" />
       </figure>
