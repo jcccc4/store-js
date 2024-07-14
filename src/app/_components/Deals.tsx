@@ -22,13 +22,13 @@ function SideDeals({
           alt={alt}
           height={1440}
           width={3270}
-          className="rounded-xl aspect-video object-cover"
+          className="rounded-xl aspect-square object-cover"
         />
         <span className="absolute left-0 top-0 w-full h-full bg-black/40 rounded-xl" />
       </figure>
-      <figcaption className="absolute left-0 top-0 flex flex-col gap-8 justify-center h-full ml-4 text-white">
-        <h2 className="text-xl">{description}</h2>
-        <Link className="text-gray-300 hover:text-white" href={"/"}>Shop now</Link>
+      <figcaption className="absolute left-0 top-0 flex flex-col justify-end h-full ml-2 pb-4 text-white">
+        <h2 className="text-base">{description}</h2>
+        <Link className="text-gray-300 text-xs hover:text-white" href={"/"}>Shop now</Link>
       </figcaption>
     </aside>
   );
@@ -42,9 +42,9 @@ export default function Deals({
   sideDealsData: Products[];
 }) {
   return (
-    <section className="flex flex-col gap-4 mx-6 my-4">
+    <section className="flex flex-col gap-4 mx-4 my-2">
       <ImageSlider data={dealsData} />
-      <section className="flex flex-wrap gap-4 justify-between ">
+      <section className="flex gap-4 justify-between ">
         {sideDealsData.map((image) => (
           <SideDeals
             key={image.id}

@@ -78,5 +78,5 @@ export const images = [
 export const imagesDeals = [
   { id: 1, url: img1, alt: "Image One", name: "Desktop" },
   { id: 2, url: img2, alt: "Image Two", name: "Laptop" },
-  { id: 3, url: img3, alt: "Image Three", name: "Components" },
+  { id: 3, url: img3, alt: "Image Three", name: "Phones" },
 ];

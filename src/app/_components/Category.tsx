@@ -5,7 +5,7 @@ import { Products } from "@/types/Product";
 
 export default function Category({ products }: { products: Products[] }) {
   return (
-    <div className="relative mx-6 py-4  flex flex-col gap-4">
+    <div className="relative mx-4 py-2  flex flex-col gap-4">
       <h1 className="text-lg font-bold">Categories</h1>
       <ImageSlider
         data={products}
